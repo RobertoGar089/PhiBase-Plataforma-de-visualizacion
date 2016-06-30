@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Ayuda";
+    string urlHome = Request.Url.AbsoluteUri;
+    string[] dividir = urlHome.Split('A');
+    string[] url2 = urlHome.Split('?');
+    string path1 = dividir[0] + "Contacto/Contacto?" + url2[1] + "?" + url2[2];
+    string path2 = dividir[0] + "?" + url2[2];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ayuda</title>
+    <meta name="description" content="TFG-plataforma web de un repositorio semántico de interacciones planta-patógeno">
+    <script type="text/javascript" src=""></script>
+</head>
+<body onload="init()">
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img id="logo" src="@Url.Content("~/Imagenes/logo-upm.png")" />
+            </div>
+            <div class="titulo">
+                <h1>Ayuda</h1>
+            </div>
+            <nav>
+                <a href="@path2">Inicio</a>
+                <a href="@path1">Contacto</a>
+                <a href="@urlHome">Ayuda</a>
+            </nav>
+        </div>
+    </header>
+</html>
+
